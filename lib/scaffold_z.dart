@@ -52,6 +52,8 @@ class _ScaffoldZState extends State<ScaffoldZ> {
         drawer: widget.appbar!.drawer != null && widget.appbar!.drawer!.items! != null  && size.width < 900 ? Drawer(
             child: SafeArea(
               child: ZDrawerWidget(
+                unselectedItemColor: widget.appbar!.drawer!.unselectedColor,
+                selectedItemColor: widget.appbar!.drawer!.selectedColor,
                 context: context,
                 title: widget.appbar!.title,
                 items: widget.appbar!.drawer!.items!,
@@ -79,6 +81,8 @@ class _ScaffoldZState extends State<ScaffoldZ> {
                           color: Colors.white,
                           duration: Duration(milliseconds: 100),
                           child: ZDrawerWidget(
+                            selectedItemColor: widget.appbar!.drawer!.selectedColor,
+                            unselectedItemColor: widget.appbar!.drawer!.unselectedColor,
                             context: context,
                             items: widget.appbar!.drawer!.items!,
                             isMob: size.width < 900,
