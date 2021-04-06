@@ -91,39 +91,39 @@ class _ZDrawerWidgetState extends State<ZDrawerWidget> {
                       ),
                     ),
                   ),
-                    if(item.sub_content != null)...{
-                      for(var sub_item in item.sub_content!)...{
-                        AnimatedContainer(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          width: double.infinity,
-                          height: chosenIndex == this.items.indexOf(item) ? 60 : 0,
-                          duration: Duration(milliseconds: (item.sub_content!.indexOf(sub_item) + 1) * 100),
-                          child: MaterialButton(
-                            onPressed: (){
-                              if(sub_item.content != null){
-                                if(isMob){
-                                  Navigator.of(context).pop(null);
-                                }
-                                ScaffoldZ().chooseContentFromDrawer(context, content: sub_item.content!);
+                  if(item.sub_content != null)...{
+                    for(var sub_item in item.sub_content!)...{
+                      AnimatedContainer(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        width: double.infinity,
+                        height: chosenIndex == this.items.indexOf(item) ? 60 : 0,
+                        duration: Duration(milliseconds: (item.sub_content!.indexOf(sub_item) + 1) * 100),
+                        child: MaterialButton(
+                          onPressed: (){
+                            if(sub_item.content != null){
+                              if(isMob){
+                                Navigator.of(context).pop(null);
                               }
-                            },
-                            child: Row(
-                              children: [
-                                if(sub_item.icon != null && chosenIndex == this.items.indexOf(item))...{
-                                  Icon(sub_item.icon),
-                                  const SizedBox(
-                                    width: 10,
-                                  )
-                                },
-                                Expanded(
-                                  child: sub_item.title,
+                              ScaffoldZ().chooseContentFromDrawer(context, content: sub_item.content!);
+                            }
+                          },
+                          child: Row(
+                            children: [
+                              if(sub_item.icon != null && chosenIndex == this.items.indexOf(item))...{
+                                Icon(sub_item.icon),
+                                const SizedBox(
+                                  width: 10,
                                 )
-                              ],
-                            ),
+                              },
+                              Expanded(
+                                child: sub_item.title,
+                              )
+                            ],
                           ),
                         ),
-                      }
+                      ),
                     }
+                  }
 
                 }
               ],
