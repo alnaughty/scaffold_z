@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:scaffold_z/items.dart';
 import 'package:scaffold_z/appbar_z.dart';
 import 'package:scaffold_z/scaffold_z.dart';
+<<<<<<< HEAD
 
 class ZDrawerWidget extends StatefulWidget {
+=======
+class ZDrawerWidget extends StatelessWidget {
+>>>>>>> b642b10 (search fix)
   List<DrawerItem> items;
   Widget? title;
   Color bgColor;
@@ -11,6 +15,7 @@ class ZDrawerWidget extends StatefulWidget {
   final bool isMob;
   ZDrawerWidget({required this.items, this.isMob = false, this.title,required this.bgColor,required this.context});
   @override
+<<<<<<< HEAD
   _ZDrawerWidgetState createState() => _ZDrawerWidgetState();
 }
 
@@ -22,6 +27,8 @@ class _ZDrawerWidgetState extends State<ZDrawerWidget> {
   late bool isMob = widget.isMob;
   int? chosenIndex;
   @override
+=======
+>>>>>>> b642b10 (search fix)
   Widget build(BuildContext context) {
     return Container(
       color: this.bgColor,
@@ -58,6 +65,7 @@ class _ZDrawerWidgetState extends State<ZDrawerWidget> {
                     height: 60,
                     child: MaterialButton(
                       onPressed: (){
+<<<<<<< HEAD
                         if(item.content != null){
                           if(isMob){
                             Navigator.of(context).pop(null);
@@ -72,6 +80,12 @@ class _ZDrawerWidgetState extends State<ZDrawerWidget> {
                             }
                           });
                         }
+=======
+                        if(isMob){
+                          Navigator.of(context).pop(null);
+                        }
+                        ScaffoldZ().chooseContentFromDrawer(context, content: item.content);
+>>>>>>> b642b10 (search fix)
                       },
                       child: Row(
                         children: [
@@ -83,6 +97,7 @@ class _ZDrawerWidgetState extends State<ZDrawerWidget> {
                           },
                           Expanded(
                             child: item.title,
+<<<<<<< HEAD
                           ),
                           if(item.sub_content != null)...{
                             Icon(chosenIndex == this.items.indexOf(item) ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_right)
@@ -125,6 +140,13 @@ class _ZDrawerWidgetState extends State<ZDrawerWidget> {
                     }
                   }
 
+=======
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+>>>>>>> b642b10 (search fix)
                 }
               ],
             ),
